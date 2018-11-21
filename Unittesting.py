@@ -11,6 +11,10 @@ class TestStudentMethods(unittest.TestCase):
         a.to_read(TEXT)
         self.a = a
 
+    def test_validation(self):
+        self.assertEqual(Student.Student("Tony", "Star", "Dacota", "22", "23", "3 4 3 4 5",
+                         Student.Student("Tony21", "St2r", "Dac@ta", "twenty second", "101", "-1 4 3 10 b")))
+
     def test_search(self):
         to_find = Student.Student("David", "Kemeron", "Toronto", "24", "23", "4 4 4 3 5")
         self.assertEqual(len(self.a.r_search(("0"))), 3)
